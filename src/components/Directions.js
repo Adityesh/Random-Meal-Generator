@@ -2,7 +2,7 @@ import React from 'react';
 
 const Directions = (props) => {
     return (
-        <p>
+        <p className='directions'>
             {props.directions}
         </p>
     )

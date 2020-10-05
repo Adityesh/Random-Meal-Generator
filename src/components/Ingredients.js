@@ -4,10 +4,10 @@ import React from 'react';
 const Description = (props) => {
     const {ingredients} = props;
     return(
-        <div>
+        <div className='ingredients'>
             <ul>
                 {ingredients.map((element, index) => {
-                    return <p key={index}>{element.ingredient} : {element.measure}</p>
+                    return <li key={index}>{element.ingredient} : <span>{element.measure}</span></li>
                 })}
             </ul>
             

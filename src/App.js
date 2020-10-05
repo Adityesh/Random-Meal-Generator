@@ -5,7 +5,7 @@ import Description from './components/Description'
 import Directions from './components/Directions';
 import Video from './components/Video';
 import Ingredients from './components/Ingredients';
-
+import './App.css';
 
 
 
@@ -17,7 +17,6 @@ const App = () => {
   const [image, setImage] = useState('');
   const [data, setData] = useState({});
   const [info, setInfo] = useState('');
-
   const getRecepie = async () => {
     try {
       const response = await fetch('https://www.themealdb.com/api/json/v1/1/random.php');
@@ -38,19 +37,19 @@ const App = () => {
         if (key.startsWith('strIngredient') && value !== "" && value !== null) {
           ingredient.push(value);
         }
-        if(key.startsWith('strMeasure') && value !== "" && value !== null) {
+        if (key.startsWith('strMeasure') && value !== "" && value !== null) {
           measures.push(value);
         }
       }
       const ingredients = [];
-      for(let i = 0;i < measures.length; i++) {
-        if(ingredient[i] !== undefined && measures[i] !== undefined) {
+      for (let i = 0; i < measures.length; i++) {
+        if (ingredient[i] !== undefined && measures[i] !== undefined) {
           ingredients.push({
-            ingredient : ingredient[i],
-            measure : measures[i]
+            ingredient: ingredient[i],
+            measure: measures[i]
           })
         }
-        
+
       }
 
       setIngredients(ingredients);
@@ -60,14 +59,15 @@ const App = () => {
 
       // Data for the recepie
       setData({
-        category : recepie.meals[0].strCategory,
-        tags : recepie.meals[0].strTags,
-        area : recepie.meals[0].strArea,
-        name : recepie.meals[0].strMeal
+        category: recepie.meals[0].strCategory,
+        tags: recepie.meals[0].strTags,
+        area: recepie.meals[0].strArea,
+        name: recepie.meals[0].strMeal
       })
 
       // Set directions for the recepie
       setInfo(recepie.meals[0].strInstructions);
+
 
     } catch (err) {
       console.log(err);
@@ -81,16 +81,18 @@ const App = () => {
 
   return (
     <div>
-      <Header />
-      <button onClick={getRecepie}>GET MEAL 🍲</button>
-      <div>
-        <div>
-          <Image image={image} />
-          <Description data={data} />
+      <Header click={getRecepie} />
+      <div className={'content'}>
+        <div className='recepie-image'>
+          <Image image={image} className='image' />
+          <Description data={data} className='description' />
         </div>
-        <div>
-          <Directions directions={info} />
-          <Ingredients ingredients={ing}/>
+        <div className='recepie-content'>
+          <h1>Recipe Directions</h1>
+          <div className='recipe-directions'>
+            <Directions directions={info} />
+            <Ingredients ingredients={ing} />
+          </div>
         </div>
         <Video src={video} />
       </div>

@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #B83B5E;
+}
+
+
+img {
+  border: 1px solid #eee;  /* JUST TO LOOK COOL */
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
+  transition: all .3s ease-in-out;
+}
+
+img:hover {
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+  transform: translate3d(0px, -1px, 0px);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header p {
+  font-variant: small-caps;
+  font-size: large;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  background-color: rgb(177, 109, 109);
+  cursor: pointer;
+  transition: background-color 0.1s linear;
+}
+
+button:hover {
+  background-color: rgb(170, 96, 96);
+}
+
+.recepie-image li {
+  margin-bottom: 10px;
+}
+
+.recepie-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid white;
+  padding: 30px 0;
+  border-width: thin;
+}
+
+
+
+
+.recepie-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid white;
+  padding: 30px 0;
+  border-width: thin;
+}
+
+.recepie-content h1 {
+  color: white;
+}
+
+.recipe-directions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+
+
+p {
+  max-width: 800px;
+  min-width: 200px;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.directions::first-letter {
+  font-size: 200%;
+  color: white;
+}
+
+
+.ingredients {
+  max-width: 500px;
+}
+
+
+.ingredients ul li {
+  list-style-type: none;
+  margin: 10px 0;
+}
+
+.ingredients ul li span{
+  color: white;
+  font-weight: bold;
+
+}
+
+
+.video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px 0;
+}
+
+.video h1 {
+  color: white;
+}
+
+
